@@ -278,6 +278,10 @@ def Walk(curdir):
 					for v in versions:
 						# print target&depend: add full path spec, incl. version & ignore extra line
 						path = v.call() + '/' +fullname[:-len(name)]
+						# fix starts of "TypeError: can only concatenate str (not "bytes") to str" {
+						if isinstance(targetAndDepend, bytes):
+							targetAndDepend = targetAndDepend.decode('utf-8')
+						# fix ends   }
 						makefile.write(path + targetAndDepend[:-1] + '\n')
 
 						# ensure folder
