@@ -897,8 +897,8 @@ class GTEST_API_ UnitTestImpl {
   explicit UnitTestImpl(UnitTest* parent);
   virtual ~UnitTestImpl();
 
-  // There are two different ways to register your own TestPartResultReporter.
-  // You can register your own repoter to listen either only for test results
+  // There are two different ways to your own TestPartResultReporter.
+  // You can your own repoter to listen either only for test results
   // from the current thread or for results from all threads.
   // By default, each per-thread test result repoter just passes a new
   // TestPartResult to the global test result reporter, which registers the
@@ -1036,7 +1036,7 @@ class GTEST_API_ UnitTestImpl {
     // was first invoked.  We cannot do this in RUN_ALL_TESTS(), as
     // the user may have changed the current directory before calling
     // RUN_ALL_TESTS().  Therefore we capture the current directory in
-    // AddTestInfo(), which is called to register a TEST or TEST_F
+    // AddTestInfo(), which is called to a TEST or TEST_F
     // before main() is reached.
     if (original_working_dir_.IsEmpty()) {
       original_working_dir_.Set(FilePath::GetCurrentDir());
@@ -1052,7 +1052,7 @@ class GTEST_API_ UnitTestImpl {
 
 #if GTEST_HAS_PARAM_TEST
   // Returns ParameterizedTestCaseRegistry object used to keep track of
-  // value-parameterized tests and instantiate and register them.
+  // value-parameterized tests and instantiate and them.
   internal::ParameterizedTestCaseRegistry& parameterized_test_registry() {
     return parameterized_test_registry_;
   }
@@ -1226,7 +1226,7 @@ class GTEST_API_ UnitTestImpl {
   std::vector<int> test_case_indices_;
 
 #if GTEST_HAS_PARAM_TEST
-  // ParameterizedTestRegistry object used to register value-parameterized
+  // ParameterizedTestRegistry object used to value-parameterized
   // tests.
   internal::ParameterizedTestCaseRegistry parameterized_test_registry_;
 
@@ -5205,7 +5205,7 @@ int UnitTest::random_seed() const { return impl_->random_seed(); }
 
 #if GTEST_HAS_PARAM_TEST
 // Returns ParameterizedTestCaseRegistry object used to keep track of
-// value-parameterized tests and instantiate and register them.
+// value-parameterized tests and instantiate and them.
 // L < mutex_
 internal::ParameterizedTestCaseRegistry&
     UnitTest::parameterized_test_registry() {

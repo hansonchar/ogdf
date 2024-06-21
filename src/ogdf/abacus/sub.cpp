@@ -197,7 +197,7 @@ master_(master),
 		(*uBound_)[i]     = v->uBound();
 	}
 
-	//! register the subproblem at the master
+	//! the subproblem at the master
 	master_->newSub(level_);
 	master_->treeInterfaceNodeBounds(id_, lowerBound(), upperBound());
 }

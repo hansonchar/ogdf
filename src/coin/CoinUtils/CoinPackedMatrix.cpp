@@ -1242,8 +1242,8 @@ CoinPackedMatrix::appendMajorVector(const int vecsize,
 #if 0
   if (std::find_if(vecind, vecind + vecsize,
 		   compose2(logical_or<bool>(),
-			    bind2nd(less<int>(), 0),
-			    bind2nd(greater_equal<int>(), minorDim_))) !=
+			    bind(less<int>(), 0),
+			    bind(greater_equal<int>(), minorDim_))) !=
       vecind + vecsize)
     throw CoinError("out of range index",
 		   "appendMajorVector", "CoinPackedMatrix");
@@ -1494,7 +1494,7 @@ CoinPackedMatrix::minorAppendSameOrdered(const CoinPackedMatrix& matrix)
       std::transform(matrix.index_ + matrix.start_[i],
 		matrix.index_ + (matrix.start_[i] + l),
 		index_ + (start_[i] + length_[i]),
-		std::bind2nd(std::plus<int>(), minorDim_));
+		std::bind(std::plus<int>(), std::placeholders::_1, minorDim_));
       CoinMemcpyN(matrix.element_ + matrix.start_[i], l,
 		       element_ + (start_[i] + length_[i]));
       length_[i] += l;

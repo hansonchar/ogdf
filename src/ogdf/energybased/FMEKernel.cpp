@@ -55,7 +55,7 @@ inline void eval_direct_aligned_SSE(
 {
 	for (__uint32 i=0; i < n1; i+=4)
 	{
-		// register for i
+		// for i
 		__m128 x      = _mm_load_ps( ptr_x1 + i );
 		__m128 y      = _mm_load_ps( ptr_y1 + i );
 		__m128 s	  = _mm_load_ps( ptr_s1 + i );
@@ -226,14 +226,14 @@ inline void eval_direct_aligned_SSE(float* ptr_x, float* ptr_y, float* ptr_s, fl
 {
 	for (__uint32 i=0; i < n; i+=4)
 	{
-		// register for i
+		// for i
 		__m128 x      = _mm_load_ps( ptr_x + i );
 		__m128 y      = _mm_load_ps( ptr_y + i );
 		__m128 s	  = _mm_load_ps( ptr_s + i );
 		__m128 fx_sum = _mm_load_ps( ptr_fx+ i );
 		__m128 fy_sum = _mm_load_ps( ptr_fy+ i );
 
-		// register for j, first we need to deal with Block(i,i)
+		// for j, first we need to deal with Block(i,i)
 		__m128 x_shuffled = _mm_shuffle_ps( x, x, _MM_SHUFFLE(0,3,2,1) );
 		__m128 y_shuffled = _mm_shuffle_ps( y, y, _MM_SHUFFLE(0,3,2,1) );
 		__m128 s_shuffled = _mm_shuffle_ps( s, s, _MM_SHUFFLE(0,3,2,1) );

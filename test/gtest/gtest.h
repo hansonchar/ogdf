@@ -7369,7 +7369,7 @@ class TypeParameterizedTestCase {
                        const char* test_names) {
     typedef typename Tests::Head Head;
 
-    // First, register the first test in 'Test' for each type in 'Types'.
+    // First, the first test in 'Test' for each type in 'Types'.
     TypeParameterizedTest<Fixture, Head, Types>::Register(
         prefix, case_name, test_names, 0);
 
@@ -10342,7 +10342,7 @@ class TestMetaFactory
 // to ParameterizedTestCaseInfo classes. ParameterizedTestCaseInfoBase
 // accumulates test information provided by TEST_P macro invocations
 // and generators provided by INSTANTIATE_TEST_CASE_P macro invocations
-// and uses that information to register all resulting test instances
+// and uses that information to all resulting test instances
 // in RegisterTests method. The ParameterizeTestCaseRegistry class holds
 // a collection of pointers to the ParameterizedTestCaseInfo objects
 // and calls RegisterTests() on each of them when asked.
@@ -10354,7 +10354,7 @@ class ParameterizedTestCaseInfoBase {
   virtual const string& GetTestCaseName() const = 0;
   // Test case id to verify identity.
   virtual TypeId GetTestCaseTypeId() const = 0;
-  // UnitTest class invokes this method to register tests in this
+  // UnitTest class invokes this method to tests in this
   // test case right before running them in RUN_ALL_TESTS macro.
   // This method should not be called more then once on any single
   // instance of a ParameterizedTestCaseInfoBase derived class.
@@ -10413,7 +10413,7 @@ class ParameterizedTestCaseInfo : public ParameterizedTestCaseInfoBase {
     instantiations_.push_back(::std::make_pair(instantiation_name, func));
     return 0;  // Return value used only to run this method in namespace scope.
   }
-  // UnitTest class invokes this method to register tests in this test case
+  // UnitTest class invokes this method to tests in this test case
   // test cases right before running tests in RUN_ALL_TESTS macro.
   // This method should not be called more then once on any single
   // instance of a ParameterizedTestCaseInfoBase derived class.
@@ -16955,7 +16955,7 @@ TYPED_TEST_P(FooTest, DoesBlah) {
 
 TYPED_TEST_P(FooTest, HasPropertyA) { ... }
 
-// Now the tricky part: you need to register all test patterns before
+// Now the tricky part: you need to all test patterns before
 // you can instantiate them.  The first argument of the macro is the
 // test case name; the rest are the names of the tests in this test
 // case.
@@ -18143,7 +18143,7 @@ class GTEST_API_ UnitTest {
 
 #if GTEST_HAS_PARAM_TEST
   // Returns the ParameterizedTestCaseRegistry object used to keep track of
-  // value-parameterized tests and instantiate and register them.
+  // value-parameterized tests and instantiate and them.
   //
   // INTERNAL IMPLEMENTATION - DO NOT USE IN A USER PROGRAM.
   internal::ParameterizedTestCaseRegistry& parameterized_test_registry();
@@ -18281,7 +18281,7 @@ class GTEST_API_ UnitTest {
 // However, we strongly recommend you to write your own main() and
 // call AddGlobalTestEnvironment() there, as relying on initialization
 // of global variables makes the code harder to read and may cause
-// problems when you register multiple environments from different
+// problems when you multiple environments from different
 // translation units and the environments have dependencies among them
 // (remember that the compiler doesn't guarantee the order in which
 // global variables from different translation units are initialized).

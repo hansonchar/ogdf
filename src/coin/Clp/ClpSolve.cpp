@@ -416,7 +416,7 @@ ClpSimplex::initialSolve(ClpSolve & options)
      CoinSighandler_t saveSignal = static_cast<CoinSighandler_t> (0);
      if (interrupt) {
           currentModel = model2;
-          // register signal handler
+          // signal handler
           saveSignal = signal(SIGINT, signal_handler);
      }
      // If no status array - set up basis
