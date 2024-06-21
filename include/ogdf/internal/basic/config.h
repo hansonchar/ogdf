@@ -124,20 +124,20 @@ using std::string;
 // C++ standard
 //---------------------------------------------------------
 
-#if __cplusplus >= 201103
+// #if __cplusplus >= 201103
 #define OGDF_HAVE_CPP11
 
-#elif defined(_MSC_VER)
-#if _MSC_VER >= 1600
-#define OGDF_HAVE_CPP11
-#endif
+// #elif defined(_MSC_VER)
+// #if _MSC_VER >= 1600
+// #define OGDF_HAVE_CPP11
+// #endif
 
-#elif defined(__GNUC__)
-#ifdef __GXX_EXPERIMENTAL_CXX0X__
-#define OGDF_HAVE_CPP11
-#endif
+// #elif defined(__GNUC__)
+// #ifdef __GXX_EXPERIMENTAL_CXX0X__
+// #define OGDF_HAVE_CPP11
+// #endif
 
-#endif
+// #endif
 
 
 #if defined(__CYGWIN__) || defined(__APPLE__) || defined(__sparc__)
@@ -183,7 +183,7 @@ using std::string;
 
 // warning C4251: 'identifier' : class 'type' needs to have dll-interface to be used by clients of class 'type2'
 #pragma warning(disable : 4251)
-// warning C4275: non – DLL-interface classkey 'identifier' used as base for DLL-interface classkey 'identifier'
+// warning C4275: non Â– DLL-interface classkey 'identifier' used as base for DLL-interface classkey 'identifier'
 #pragma warning(disable : 4275)
 #endif
 
